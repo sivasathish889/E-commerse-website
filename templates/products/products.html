@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="margin-top:70px">
+    <section class="bg-light product-body my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="my-5 text-center">{{catagery_name}} Products </h4>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href=" {% url "home" %}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{% url "catagery" %}">Products</a></li>
+          <li class="breadcrumb-item"><a href="{% url "products" catagery_name %}">{{catagery_name}}</a></li>
+        </ol>
+      </nav>
+    <div  class="container d-flex flex-column">
+        <div class="row justify-content-between">
+        {% for item in product %}
+        <div class="card col-md-4 my-3 bg-light p-3" style="width: 15rem;">
+                <a href="{% url "product_view" item.name catagery_name %}">
+                <img class="card-img-top" src="{{item.image.url}}" alt="Card image cap" style="height:150px">
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{item.name}}</h5>
+                </div>
+            </a>
+        </div>
+         {% endfor %}
+        </div>
+     </div>
+</div>
+{% endblock content %}

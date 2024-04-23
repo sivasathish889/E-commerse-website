@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+{% include "inc/messages.html" %}
+<div class="mt-5 container">
+    <div class="row login-form ">
+            <h1 class="text-center my-3">Login Form</h1>
+            <div class="col-md-3 d-flex flex-column justify-center p-4" style="background-color:gray">
+                <form class="my-auto" method="POST">
+                    {{form | crispy}}
+                    {% csrf_token %}
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary mt-5" >Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3 d-flex flex-column bg-primary text-center p-4" >
+                <div class="mt-auto "><h5 class="text-center text-light"> Welcome User</h5></div>
+                <div class="mb-auto "><h5 class="text-center text-light"> Please Login..</h5></div>
+            </div>
+            
+        
+        </div>
+    </div>
+{% endblock content %}

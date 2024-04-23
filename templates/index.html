@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Shopping Kart | Online Shopping</title>
+{% endblock title %}
+{% block content %}
+{% include "./inc/slider.html" %}
+
+<div class="container">
+    <div class="row d-flex">
+        {% for item in data %}
+        <div class="col-lg-3 p-2 justify-content-between col-sm-6">
+                    <a href="{% url "products_detail" item.id %}">
+                    <div class="card container" style="width: 15rem;">
+                        <div>
+                            <span class="trending bg-success">trending</span>
+                            <img id="trending-img" class="card-img-top mt-3 p-3" src="{{item.image.url}}"  style="height:150px ; object-fit:contain" >
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text text-nowrap w-100 overflow-hidden"> {{item.name}} </p>
+                        </div>
+                      </div>
+                    </a>
+                </div>
+        {% endfor %}
+</div>
+</div>
+
+
+{% endblock content %}
+
