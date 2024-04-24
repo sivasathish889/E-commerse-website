@@ -69,36 +69,7 @@
 </div>
 
 <script src="{% static "js/index.js" %}"></script>
-{% comment %} <script>
-    let csrf = document.getElementsByName("csrfmiddlewaretoken")
-        let pid = document.getElementById("pid").value
-        let qty = document.getElementById("qty")
-        let csrft = csrf[0].value
-        let btncart = document.getElementById("btncart")
-        btncart.addEventListener("click",()=>{
-            $.ajax({
-                obj = {
-                    'csrf': csrft,
-                    'product_id' : pid,
-                    'product_qty' : qty
-                }
-                type: 'POST',
-                url: "cart/",
-                data: JSON.stringify(obj),
-                headers : {
-                    "X-Requested-With" : "XMLHttpRequest",
-                },
-                success : function(response){
-                    console.log(response);
-                },
-                error : function(error){
-                    console.log(error);
-                }
 
-
-            })
-        })
-</script> {% endcomment %}
 
 
 {% endblock content %}
