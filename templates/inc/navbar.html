@@ -42,6 +42,12 @@
                 Cart
             </a>  
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "wishlist-view" %}">
+              <i class="fa-solid fa-heart"></i>
+                Whislist
+            </a>
+          </li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url "login" %}">
@@ -54,13 +60,9 @@
                 Register
             </a>
           </li>
+          
           {% endif %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url "wishlist-view" %}">
-              <i class="fa-solid fa-heart"></i>
-                Whislist
-            </a>
-          </li>
+          
         </ul>
       </div>
     </div>
